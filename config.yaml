@@ -1,0 +1,22 @@
+# Configuration par défaut — surchargeable via .env
+
+vllm:
+  base_url: "http://localhost:8000/v1"
+  api_key: "EMPTY"
+  llm_model: "Qwen/Qwen3.5-122B-Instruct"
+  vision_model: "Qwen/Qwen3.5-122B-Instruct"
+  embedding_base_url: "http://localhost:8001/v1"
+  embedding_model: "Qwen/Qwen3-Embedding-8B"
+  embedding_dim: 4096
+
+rag:
+  working_dir: "./rag_storage"
+  output_dir: "./output"
+  parser: "mineru"
+  parse_method: "auto"
+  query_mode: "hybrid"
+  mineru_device: "cuda"
+
+paths:
+  reference_dir: "./reference"
+  data_dir: "./data"

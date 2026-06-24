@@ -1,0 +1,23 @@
+---
+description: Utiliser le RAG de doc technique avant toute réponse métier
+globs:
+alwaysApply: true
+---
+
+# Documentation technique (RAG local)
+
+Ce projet contient une base de connaissances indexée depuis `reference/` via RAG-Anything.
+
+## Règles
+
+1. Avant de répondre à une question métier, d'interpréter des données dans `data/`, ou d'écrire un script d'analyse, **interroge le serveur MCP `rag-reference`** avec l'outil `search_reference_docs`.
+2. Vérifie l'état de l'index avec `get_index_status` si la recherche ne retourne rien d'utile.
+3. Ne devine pas les règles techniques : cite et applique le contexte RAG.
+4. Les fichiers dans `data/` sont les données à traiter ; `reference/` est la doc de référence indexée.
+5. Propose `reindex_reference` uniquement si l'utilisateur a ajouté ou modifié des PDF dans `reference/`.
+
+## Workflow type
+
+1. `search_reference_docs` avec une requête précise (norme, code, unité, schéma…)
+2. Lire le contexte retourné
+3. Produire le script Python ou l'analyse en s'appuyant sur ce contexte

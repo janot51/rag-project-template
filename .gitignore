@@ -1,0 +1,26 @@
+# Environnement Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Secrets et config locale
+.env
+
+# Index RAG et sorties MinerU
+rag_storage/
+output/
+
+# Données projet (optionnel : retirer si vous versionnez data/)
+data/*
+!data/.gitkeep
+
+# Docs de référence (souvent volumineuses / confidentielles)
+reference/*
+!reference/.gitkeep
+
+# Logs
+*.log
+logs/

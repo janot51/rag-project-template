@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "rag-reference": {
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["${workspaceFolder}/mcp_server/server.py"],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "PATH": "${workspaceFolder}\\.venv\\Scripts;${env:PATH}"
+      }
+    }
+  }
+}
