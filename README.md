@@ -50,16 +50,40 @@ rag-project-template/
 
 ### Windows (Cursor)
 
+**Option 1 : Script PowerShell (recommandé)**
+
 ```powershell
 cd rag-project-template
-uv sync
+.\scripts\setup.ps1
+```
+
+**Option 2 : Manuel**
+
+```powershell
+cd rag-project-template
+uv venv .venv
+.\.venv\Scripts\activate
+uv pip sync .
+Copy-Item .env.example .env
 ```
 
 ### Linux / macOS
 
+**Option 1 : Script Bash (recommandé)**
+
 ```bash
 cd rag-project-template
-uv sync
+./scripts/setup.sh
+```
+
+**Option 2 : Manuel**
+
+```bash
+cd rag-project-template
+uv venv .venv
+source .venv/bin/activate
+uv pip sync .
+cp .env.example .env
 ```
 
 ---
